@@ -53,7 +53,12 @@
       <pubDate>Wed, 03 Jun 2020 21:41:35 +0800</pubDate>
       
       <guid>https://KeyCoCo.github.io/post/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
-      <description></description>
+      <description>Java面向对象 面向对象概述 在Java中一切皆为对象，面向对象是对类的描述。面向对象更加趋近于自然语言，在Java中面向对象含有属性和方法，我们通过操作面向对象中的属性和方法来满足相应的需求。下图的学生类包括了属性姓名、年龄、性别，和方法上学、放学、写作业。注意：Student是一个构造方法它用来初始化对象的属性。
+我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。注意：当修饰符不为private的情况下。
+public class MainTest(){ public static void main(String[] args){ Student student = new Student(&amp;#34;小明&amp;#34;,19,&amp;#39;男&amp;#39;); student.goSchool(); student.goHome(); student.doHomework(); System.out.println(&amp;#34;姓名：%s%t年龄：%s%t性别：%s%n&amp;#34;,student.Name,student.age,student.sex); } } 变量作用域 在类内方法体外定义的变量为成员变量，又称实例变量。成员变量被对象名访问。
+当成员变量被static修饰时进化为类变量，又称静态变量。类变量被类名访问。
+面向对象的三大特性 封装 封装提高了Java程序的安全性，封装使用private修饰成员变量（实例变量）
+继承 多态 </description>
     </item>
     
     <item>
@@ -67,8 +72,7 @@
 小数型：float,double
 字符型：char
 boolean型：true,false
-基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&amp;gt; short short --&amp;gt; int char --&amp;gt; int int --&amp;gt; long float --&amp;gt; double int a=1+&amp;#39;A&amp;#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&amp;#39;A&amp;#39;+&amp;#39;B&amp;#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&amp;gt; float long --&amp;gt; int int --&amp;gt; short short --&amp;gt; byte int --&amp;gt; char short --&amp;gt; char byte --&amp;gt; char long l=987654321987654L; int i=(int)l; System.out.println(i);//结果为822468678内存溢出 char c=(char)65; System.out.println(c);//结果为A Java引用数据类型 在Java语言中除了基本数据类型以外，其他类型的数据都是引用数据类型（包括对象class）。在Java中为所有的基本数据类型提供了所对应的包装类型。除了Integer与Character外其他包装类皆是将首字母大写即可。包装类型与基本类型之间的转换成为拆装箱。
-int i=34; Integer ie=new Integer(i);//自动装箱 double d=3.</description>
+基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&amp;gt; short short --&amp;gt; int char --&amp;gt; int int --&amp;gt; long float --&amp;gt; double int --&amp;gt; float int a=1+&amp;#39;A&amp;#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&amp;#39;A&amp;#39;+&amp;#39;B&amp;#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&amp;gt; float long --&amp;gt; int int --&amp;gt; short short --&amp;gt; byte int --&amp;gt; char short --&amp;gt; char byte --&amp;gt; char float -.-&amp;gt; int double -.-&amp;gt; int float -.-&amp;gt; long double -.</description>
     </item>
     
   </channel>
