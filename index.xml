@@ -6,10 +6,30 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Jun 2020 21:43:21 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2020 18:29:32 +0800</lastBuildDate>
     
 	<atom:link href="https://KeyCoCo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mysql基本语法</title>
+      <link>https://KeyCoCo.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sat, 07 Nov 2020 18:29:32 +0800</pubDate>
+      
+      <guid>https://KeyCoCo.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>mySql基础语法 连接数据库命令：mysql -uroot -padmin;
+查看已有数据库：show databases;
+创建一个库：create database 库名;
+选择一个库：use 库名;
+查看库内的数据表：show tables;
+在库内创建一个数据表：create table 表名(字段名 字段类型 ，字段名 字段类型 ，。。。。。)charset=utf8;
+create table MyTable( MyTable_Id int not null auto_increment, MyTable_Data varchar(20), rimmary key (MyTable_Id) )charset=utf8; 在表内插入数据：insert into 表名 (字段名)values(值);
+在表内删除数据：delete from 表名 where 筛选数据;
+在表内修改数据：update 表名 set 字段名 = 修改的值,字段名 = 修改的值where 筛选数据;
+查看表中所有数据：select * from 表名;
+在表内插入新的字段：alert table 表名 add 字段名 字段属性;
+在表内删除字段：alert table 表名 drop 字段名;</description>
+    </item>
     
     <item>
       <title>Java多线程</title>
@@ -79,26 +99,6 @@ public class MainTest(){ public static void main(String[] args){ Student student
 字符型：char
 boolean型：true,false
 基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&amp;gt; short short --&amp;gt; int char --&amp;gt; int int --&amp;gt; long float --&amp;gt; double int --&amp;gt; float int a=1+&amp;#39;A&amp;#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&amp;#39;A&amp;#39;+&amp;#39;B&amp;#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&amp;gt; float long --&amp;gt; int int --&amp;gt; short short --&amp;gt; byte int --&amp;gt; char short --&amp;gt; char byte --&amp;gt; char float -.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://KeyCoCo.github.io/post/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://KeyCoCo.github.io/post/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-      <description>mySql基础语法 连接数据库命令：mysql -uroot -padmin;
-查看已有数据库：show databases;
-创建一个库：create database 库名;
-选择一个库：use 库名;
-查看库内的数据表：show tables;
-在库内创建一个数据表：create table 表名(字段名 字段类型 ，字段名 字段类型 ，。。。。。)charset=utf8;
-create table MyTable(MyTable_Id int not null auto_increment,MyTable_Data varchar(20),rimmary key (MyTable_Id))charset=utf8;在表内插入数据：insert into 表名 (字段名)values(值);
-在表内删除数据：delete from 表名 where 筛选数据;
-在表内修改数据：update 表名 set 字段名 = 修改的值,字段名 = 修改的值where 筛选数据;
-查看表中所有数据：select * from 表名;
-在表内插入新的字段：alert table 表名 add 字段名 字段属性;
-在表内删除字段：alert table 表名 drop 字段名;</description>
     </item>
     
   </channel>
