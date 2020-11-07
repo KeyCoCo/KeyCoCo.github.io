@@ -2,77 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>https://KeyCoCo.github.io/post/</link>
+    <link>http://example.org/post/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Jun 2020 21:43:21 +0800</lastBuildDate>
     
-	<atom:link href="https://KeyCoCo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Java多线程</title>
-      <link>https://KeyCoCo.github.io/post/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
-      <pubDate>Wed, 03 Jun 2020 21:43:21 +0800</pubDate>
-      
-      <guid>https://KeyCoCo.github.io/post/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
-      <description></description>
-    </item>
     
     <item>
-      <title>JavaIO</title>
-      <link>https://KeyCoCo.github.io/post/javaio/</link>
-      <pubDate>Wed, 03 Jun 2020 21:43:08 +0800</pubDate>
+      <title></title>
+      <link>http://example.org/post/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://KeyCoCo.github.io/post/javaio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java集合</title>
-      <link>https://KeyCoCo.github.io/post/java%E9%9B%86%E5%90%88/</link>
-      <pubDate>Wed, 03 Jun 2020 21:42:34 +0800</pubDate>
-      
-      <guid>https://KeyCoCo.github.io/post/java%E9%9B%86%E5%90%88/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java常用API</title>
-      <link>https://KeyCoCo.github.io/post/java%E5%B8%B8%E7%94%A8api/</link>
-      <pubDate>Wed, 03 Jun 2020 21:42:20 +0800</pubDate>
-      
-      <guid>https://KeyCoCo.github.io/post/java%E5%B8%B8%E7%94%A8api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java面向对象</title>
-      <link>https://KeyCoCo.github.io/post/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
-      <pubDate>Wed, 03 Jun 2020 21:41:35 +0800</pubDate>
-      
-      <guid>https://KeyCoCo.github.io/post/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
-      <description>Java面向对象 面向对象概述 在Java中一切皆为对象，面向对象是对类的描述。面向对象更加趋近于自然语言，在Java中面向对象含有属性和方法，我们通过操作面向对象中的属性和方法来满足相应的需求。下图的学生类包括了属性姓名、年龄、性别，和方法上学、放学、写作业。注意：Student是一个构造方法它用来初始化对象的属性。
-我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。注意：当修饰符不为private的情况下。
-public class MainTest(){ public static void main(String[] args){ Student student = new Student(&amp;#34;小明&amp;#34;,19,&amp;#39;男&amp;#39;); student.goSchool(); student.goHome(); student.doHomework(); System.out.println(&amp;#34;姓名：%s%t年龄：%s%t性别：%s%n&amp;#34;,student.Name,student.age,student.sex); } } 变量作用域 在类内方法体外定义的变量为成员变量，又称实例变量。成员变量被对象名访问。
-当成员变量被static修饰时进化为类变量，又称静态变量。类变量被类名访问。
-面向对象的三大特性 封装 封装提高了Java程序的安全性，封装使用private修饰成员变量（实例变量）
-继承 多态 </description>
-    </item>
-    
-    <item>
-      <title>Java语法基础</title>
-      <link>https://KeyCoCo.github.io/post/java%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Wed, 03 Jun 2020 21:41:10 +0800</pubDate>
-      
-      <guid>https://KeyCoCo.github.io/post/java%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</guid>
-      <description>Java基础语法 Java基本数据类型（值类型） 在Java中共有4大基本数据类型分别为：整数型，小数型，字符型，boolean型
-整数型：byte,short,int,long
-小数型：float,double
-字符型：char
-boolean型：true,false
-基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&amp;gt; short short --&amp;gt; int char --&amp;gt; int int --&amp;gt; long float --&amp;gt; double int --&amp;gt; float int a=1+&amp;#39;A&amp;#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&amp;#39;A&amp;#39;+&amp;#39;B&amp;#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&amp;gt; float long --&amp;gt; int int --&amp;gt; short short --&amp;gt; byte int --&amp;gt; char short --&amp;gt; char byte --&amp;gt; char float -.-&amp;gt; int double -.-&amp;gt; int float -.-&amp;gt; long double -.</description>
+      <guid>http://example.org/post/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description>mySql基础语法 连接数据库命令：mysql -uroot -padmin;
+查看已有数据库：show databases;
+创建一个库：create database 库名;
+选择一个库：use 库名;
+查看库内的数据表：show tables;
+在库内创建一个数据表：create table 表名(字段名 字段类型 ，字段名 字段类型 ，。。。。。)charset=utf8;
+create table MyTable(MyTable_Id int not null auto_increment,MyTable_Data varchar(20),rimmary key (MyTable_Id))charset=utf8;在表内插入数据：insert into 表名 (字段名)values(值);
+在表内删除数据：delete from 表名 where 筛选数据;
+在表内修改数据：update 表名 set 字段名 = 修改的值,字段名 = 修改的值where 筛选数据;
+查看表中所有数据：select * from 表名;
+在表内插入新的字段：alert table 表名 add 字段名 字段属性;
+在表内删除字段：alert table 表名 drop 字段名;</description>
     </item>
     
   </channel>
