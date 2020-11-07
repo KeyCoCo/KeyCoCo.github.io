@@ -1,95 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Java面向对象 // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.71.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://KeyCoCo.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
     
-    <title>Java面向对象 - My New Hugo Site</title>
-    
-    <meta name="description" content="Java面向对象 面向对象概述 在Java中一切皆为对象，面向对象是对类的描述。面向对象更加趋近于自然语言，在Java中面向对象含有属性和方法，我们通过操作面向对象中的属性和方法来满足相应的需求。下图的学生类包括了属性姓名、年龄、性别，和方法上学、放学、写作业。注意：Student是一个构造方法它用来初始化对象的属性。
-我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。注意：当修饰符不为private的情况下。
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java面向对象"/>
+<meta name="twitter:description" content="Java面向对象 面向对象概述 在Java中一切皆为对象，面向对象是对类的描述。面向对象更加趋近于自然语言，在Java中面向对象含有属性和方法，我们通过操作面向对象中的属性和方法来满足相应的需求。下图的学生类包括了属性姓名、年龄、性别，和方法上学、放学、写作业。注意：Student是一个构造方法它用来初始化对象的属性。
+我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。注意：当变量或方法不被修饰符private修饰时。
 public class MainTest(){ public static void main(String[] args){ Student student = new Student(&#34;小明&#34;,19,&#39;男&#39;); student.goSchool(); student.goHome(); student.doHomework(); System.out.println(&#34;姓名：%s%t年龄：%s%t性别：%s%n&#34;,student.Name,student.age,student.sex); } } 变量作用域 在类内方法体外定义的变量为成员变量，又称实例变量。成员变量被对象名访问。
 当成员变量被static修饰时进化为类变量，又称静态变量。类变量被类名访问。
 在方法体中定义的变量为局部变量它只能在该方法体中访问。
-面向对象的三大特性 封装 封装提高了Java程序的安全性，封装使用private修饰成员变量（实例变量）
-继承 多态 ">
-    <meta name="author" content="">
-    
-    <link href="http://example.org/an-old-hope.min.css" rel="stylesheet">
-    <link href="http://example.org/style.css" rel="stylesheet">
-    <link href="http://example.org/custom.css" rel="stylesheet">
-    
-    <link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png">
-    <link rel="icon" href="http://example.org/favicon.ico">
-    <meta name="generator" content="Hugo 0.71.1" />
-    
-    
-    
-    <script>
-      function setTheme() {
-        const time = new Date();
+面向对象的三大特性 封装 封装用private修饰成员变量，提供相应的get和set方法来获取变量提高里程序的安全性。
+继承 通过继承父类使得子类拥有父类相应的属性与方法，Java中的继承为单继承即一个父类能被多个子类所继承，但一个子类只能继承一个父类，提高了代码的可拓展性。注意：子类不能继承父类私有的方法与属性。
+关键字：子类 extends 父类 （this表示本类 super表示父类 解决子类与父类变量名或方法名重名。）
+多态 通过定义不同的接口来实现相应的功能，大大提高了代码的可维护性与可持续开发性。
+关键字：interface 接口名 子类名 implements 接口名
+伪代码：@Override重写（方法名参数列表返回值一致）@Overload重载（方法名一致参数列表返回值随机不同）"/>
 
-        const prev = localStorage.getItem('date');
-        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+    <meta property="og:title" content="Java面向对象" />
+<meta property="og:description" content="Java面向对象 面向对象概述 在Java中一切皆为对象，面向对象是对类的描述。面向对象更加趋近于自然语言，在Java中面向对象含有属性和方法，我们通过操作面向对象中的属性和方法来满足相应的需求。下图的学生类包括了属性姓名、年龄、性别，和方法上学、放学、写作业。注意：Student是一个构造方法它用来初始化对象的属性。
+我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。注意：当变量或方法不被修饰符private修饰时。
+public class MainTest(){ public static void main(String[] args){ Student student = new Student(&#34;小明&#34;,19,&#39;男&#39;); student.goSchool(); student.goHome(); student.doHomework(); System.out.println(&#34;姓名：%s%t年龄：%s%t性别：%s%n&#34;,student.Name,student.age,student.sex); } } 变量作用域 在类内方法体外定义的变量为成员变量，又称实例变量。成员变量被对象名访问。
+当成员变量被static修饰时进化为类变量，又称静态变量。类变量被类名访问。
+在方法体中定义的变量为局部变量它只能在该方法体中访问。
+面向对象的三大特性 封装 封装用private修饰成员变量，提供相应的get和set方法来获取变量提高里程序的安全性。
+继承 通过继承父类使得子类拥有父类相应的属性与方法，Java中的继承为单继承即一个父类能被多个子类所继承，但一个子类只能继承一个父类，提高了代码的可拓展性。注意：子类不能继承父类私有的方法与属性。
+关键字：子类 extends 父类 （this表示本类 super表示父类 解决子类与父类变量名或方法名重名。）
+多态 通过定义不同的接口来实现相应的功能，大大提高了代码的可维护性与可持续开发性。
+关键字：interface 接口名 子类名 implements 接口名
+伪代码：@Override重写（方法名参数列表返回值一致）@Overload重载（方法名一致参数列表返回值随机不同）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://KeyCoCo.github.io/post/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" />
+<meta property="article:published_time" content="2020-06-03T21:41:35+08:00" />
+<meta property="article:modified_time" content="2020-06-03T21:41:35+08:00" />
 
-        const now = time.getTime();
-        let sunrise;
-        let sunset;
 
-        function setBodyClass() {
-          if (now > sunrise && now < sunset) return;
-          document.body.classList.add('dark');
-        }
-
-        if (date !== prev) {
-          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
-            .then(res => res.json())
-            .then(data => {
-              sunrise = data.sunrise.split(':').map(Number);
-              sunset = data.sunset.split(':').map(Number);
-            })
-            .catch(() => {
-              sunrise = [7, 0];
-              sunset = [19, 0];
-            })
-            .finally(() => {
-              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
-              sunset = time.setHours(sunset[0], sunset[1], 0);
-              setBodyClass();
-              localStorage.setItem('sunrise', sunrise);
-              localStorage.setItem('sunset', sunset);
-            });
-          localStorage.setItem('date', date);
-        } else {
-          sunrise = Number(localStorage.getItem('sunrise'));
-          sunset = Number(localStorage.getItem('sunset'));
-          setBodyClass();
-        }
-      }
-    </script>
   </head>
-  <body class="single">
-    <script>
-      setTheme();
-    </script>
-    <header class="header">
-      <nav class="nav">
-        <p class="logo"><a href="http://example.org/">My New Hugo Site</a></p>
-      </nav>
+  <body>
+    <header class="app-header">
+      <a href="https://KeyCoCo.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
     </header>
-    <main class="main">
-
-
-<article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title">Java面向对象</h1>
-    <div class="post-meta">June 3, 2020</div>
-  </header>
-  <div class="post-content"><h1 id="java面向对象">Java面向对象</h1>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Java面向对象</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 3, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h1 id="java面向对象">Java面向对象</h1>
 <h2 id="面向对象概述">面向对象概述</h2>
 <p>在Java中一切皆为对象，面向对象是对类的描述。面向对象更加趋近于自然语言，在Java中面向对象含有属性和方法，我们通过操作面向对象中的属性和方法来满足相应的需求。下图的学生类包括了属性姓名、年龄、性别，和方法上学、放学、写作业。<strong>注意：Student是一个构造方法它用来初始化对象的属性</strong>。</p>
-<p>我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。<strong>注意：当修饰符不为private的情况下</strong>。</p>
+<p>我们在操作对象（类）调用方法时，通常需要将对象实例化当然我们也可以通过实例来访问对象的属性。<strong>注意：当变量或方法不被修饰符private修饰时。</strong></p>
 <p><img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wkdRPyodpds_S_NJsFYMkv9p4ucA5u9BIbDIy4eLgBcqWkoWpBrt1Bp4trHh8pGGA9wQ3cSaPYKKAnQaL87P1QL9EPZ9CemQI9Xse3XsOSas4ylJyuEIC_FmS3HGnZ_pSL6IH5B18UNvHDb2qbiiXDIy5w7u0" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainTest</span><span style="color:#f92672">(){</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
@@ -106,23 +94,21 @@ public class MainTest(){ public static void main(String[] args){ Student student
 <p>在方法体中定义的变量为局部变量它只能在该方法体中访问。</p>
 <h2 id="面向对象的三大特性">面向对象的三大特性</h2>
 <h3 id="封装">封装</h3>
-<p>封装提高了Java程序的安全性，封装使用private修饰成员变量（实例变量）</p>
+<p>封装用private修饰成员变量，提供相应的get和set方法来获取变量提高里程序的安全性。</p>
 <h3 id="继承">继承</h3>
+<p>通过继承父类使得子类拥有父类相应的属性与方法，Java中的继承为单继承即一个父类能被多个子类所继承，但一个子类只能继承一个父类，提高了代码的可拓展性。<strong>注意：子类不能继承父类私有的方法与属性。</strong></p>
+<p>关键字：子类 extends 父类 （this表示本类  super表示父类  解决子类与父类变量名或方法名重名。）</p>
 <h3 id="多态">多态</h3>
-</div>
-  
-</article></main>
-<footer class="footer">
-  <span>&copy; 2020 <a href="http://example.org/">My New Hugo Site</a></span>
-  <span>&middot;</span>
-  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
-  <span>&middot;</span>
-  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
-</footer>
-<script src="http://example.org/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-</body>
-</html>
+<p>通过定义不同的接口来实现相应的功能，大大提高了代码的可维护性与可持续开发性。</p>
+<p>关键字：interface 接口名  子类名 implements 接口名</p>
+<p>伪代码：@Override重写（方法名参数列表返回值一致）@Overload重载（方法名一致参数列表返回值随机不同）</p>
 
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

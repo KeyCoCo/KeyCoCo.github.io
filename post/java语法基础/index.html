@@ -1,94 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Java语法基础 // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.71.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://KeyCoCo.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
     
-    <title>Java语法基础 - My New Hugo Site</title>
-    
-    <meta name="description" content="Java基础语法 第一个Java程序 在Java中main方法作为程序的入口它的方法体时规定的，在一个Java文件中可以定义多个类但有且只能有一个公共类且与文件名相同，此类为这个Java文件的主类。
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java语法基础"/>
+<meta name="twitter:description" content="Java基础语法 第一个Java程序 在Java中main方法作为程序的入口它的方法体是Java语言所规定的，在一个Java文件中可以定义多个类但有且只能有一个公共类且与文件名相同，此类为这个Java文件的主类。
 //文件名为Test.java public class Test(){ } class c1(){ } class c2(){ } class c3(){ } Java基本数据类型（值类型） 在Java中共有4大基本数据类型分别为：整数型，小数型，字符型，boolean型
 整数型：byte,short,int,long
 小数型：float,double
 字符型：char
 boolean型：true,false
-基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&gt; short short --&gt; int char --&gt; int int --&gt; long float --&gt; double int --&gt; float int a=1&#43;&#39;A&#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&#39;A&#39;&#43;&#39;B&#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&gt; float long --&gt; int int --&gt; short short --&gt; byte int --&gt; char short --&gt; char byte --&gt; char float -.">
-    <meta name="author" content="">
-    
-    <link href="http://example.org/an-old-hope.min.css" rel="stylesheet">
-    <link href="http://example.org/style.css" rel="stylesheet">
-    <link href="http://example.org/custom.css" rel="stylesheet">
-    
-    <link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png">
-    <link rel="icon" href="http://example.org/favicon.ico">
-    <meta name="generator" content="Hugo 0.71.1" />
-    
-    
-    
-    <script>
-      function setTheme() {
-        const time = new Date();
+基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&gt; short short --&gt; int char --&gt; int int --&gt; long float --&gt; double int --&gt; float int a=1&#43;&#39;A&#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&#39;A&#39;&#43;&#39;B&#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&gt; float long --&gt; int int --&gt; short short --&gt; byte int --&gt; char short --&gt; char byte --&gt; char float -."/>
 
-        const prev = localStorage.getItem('date');
-        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+    <meta property="og:title" content="Java语法基础" />
+<meta property="og:description" content="Java基础语法 第一个Java程序 在Java中main方法作为程序的入口它的方法体是Java语言所规定的，在一个Java文件中可以定义多个类但有且只能有一个公共类且与文件名相同，此类为这个Java文件的主类。
+//文件名为Test.java public class Test(){ } class c1(){ } class c2(){ } class c3(){ } Java基本数据类型（值类型） 在Java中共有4大基本数据类型分别为：整数型，小数型，字符型，boolean型
+整数型：byte,short,int,long
+小数型：float,double
+字符型：char
+boolean型：true,false
+基本数据类型之间的转换 自动转换 注：Java在底层运算时会自动将byte,short,char类型转换为int类型进行计算 graph LR byte --&gt; short short --&gt; int char --&gt; int int --&gt; long float --&gt; double int --&gt; float int a=1&#43;&#39;A&#39;;//此时字符类型自动转换为int类型 System.out.println(a);//结果为66 int i=&#39;A&#39;&#43;&#39;B&#39;; System.out.println(i);//结果为131 强制转换 注：在强制转换时可能会造成数据溢出 graph LR double --&gt; float long --&gt; int int --&gt; short short --&gt; byte int --&gt; char short --&gt; char byte --&gt; char float -." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://KeyCoCo.github.io/post/java%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" />
+<meta property="article:published_time" content="2020-06-03T21:41:10+08:00" />
+<meta property="article:modified_time" content="2020-06-03T21:41:10+08:00" />
 
-        const now = time.getTime();
-        let sunrise;
-        let sunset;
 
-        function setBodyClass() {
-          if (now > sunrise && now < sunset) return;
-          document.body.classList.add('dark');
-        }
-
-        if (date !== prev) {
-          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
-            .then(res => res.json())
-            .then(data => {
-              sunrise = data.sunrise.split(':').map(Number);
-              sunset = data.sunset.split(':').map(Number);
-            })
-            .catch(() => {
-              sunrise = [7, 0];
-              sunset = [19, 0];
-            })
-            .finally(() => {
-              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
-              sunset = time.setHours(sunset[0], sunset[1], 0);
-              setBodyClass();
-              localStorage.setItem('sunrise', sunrise);
-              localStorage.setItem('sunset', sunset);
-            });
-          localStorage.setItem('date', date);
-        } else {
-          sunrise = Number(localStorage.getItem('sunrise'));
-          sunset = Number(localStorage.getItem('sunset'));
-          setBodyClass();
-        }
-      }
-    </script>
   </head>
-  <body class="single">
-    <script>
-      setTheme();
-    </script>
-    <header class="header">
-      <nav class="nav">
-        <p class="logo"><a href="http://example.org/">My New Hugo Site</a></p>
-      </nav>
+  <body>
+    <header class="app-header">
+      <a href="https://KeyCoCo.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
     </header>
-    <main class="main">
-
-
-<article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title">Java语法基础</h1>
-    <div class="post-meta">June 3, 2020</div>
-  </header>
-  <div class="post-content"><h1 id="java基础语法">Java基础语法</h1>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Java语法基础</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 3, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h1 id="java基础语法">Java基础语法</h1>
 <h2 id="第一个java程序">第一个Java程序</h2>
-<p>在Java中main方法作为程序的入口它的方法体时规定的，在一个Java文件中可以定义多个类但有且只能有一个公共类且与文件名相同，此类为这个Java文件的主类。</p>
+<p>在Java中main方法作为程序的入口它的方法体是Java语言所规定的，在一个Java文件中可以定义多个类但有且只能有一个公共类且与文件名相同，此类为这个Java文件的主类。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//文件名为Test.java
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span><span style="color:#f92672">(){</span>
     
@@ -140,7 +120,7 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> c<span style="color:#f92672">=(</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)</span>65<span style="color:#f92672">;</span>
 System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>c<span style="color:#f92672">);</span><span style="color:#75715e">//结果为A
 </span></code></pre></div><h2 id="java引用数据类型">Java引用数据类型</h2>
-<p>在Java语言中除了基本数据类型以外，其他类型的数据都是引用数据类型（包括对象class）。在Java中为所有的基本数据类型提供了所对应的包装类型。除了Integer与Character外其他包装类皆是将首字母大写即可。包装类型与基本类型之间的转换成为拆装箱。</p>
+<p>在Java语言中除了基本数据类型以外，其他类型的数据都是引用数据类型（即所有new建立的都为引用数据类型）。在Java中为所有的基本数据类型提供了所对应的包装类型。除了Integer与Character外其他包装类皆是将首字母大写即可，包装类型与基本类型之间的转换成为拆装箱。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>34<span style="color:#f92672">;</span>
 Integer ie<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">(</span>i<span style="color:#f92672">);</span><span style="color:#75715e">//自动装箱
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> d<span style="color:#f92672">=</span>3<span style="color:#f92672">.</span><span style="color:#a6e22e">14</span><span style="color:#f92672">;</span>
@@ -204,7 +184,11 @@ sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><
 	254896 --&gt; char类型的字符数组
 	110925 --&gt; 小明
 	254876 --&gt; 小红
-</code></pre><h2 id="java中的运算符">Java中的运算符</h2>
+</code></pre><h2 id="jvm中的存储空间">Jvm中的存储空间</h2>
+<p>在Jvm中共有3大主要存储空间分别为栈内存，堆内存，方法区。程序运行时先将类装载到方法区再由解释器控制相应的数据类型将它们储存到栈中或堆中。</p>
+<p>基本数据类型储存再栈里，一旦离开该变量的作用域该基本数据类型将会被销毁。</p>
+<p>引用数据类型储存在堆里，堆里的数据不会被立刻销毁但会被垃圾回收机制（jc回收机制）不定时清理。</p>
+<h2 id="java中的运算符">Java中的运算符</h2>
 <p>在Java中有5种运算符</p>
 <p>基本运算符：+ - * / %</p>
 <p>比较运算符：&gt; &lt; &gt;= &lt;= !=</p>
@@ -214,7 +198,7 @@ sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><
 <h2 id="java中的程序运行结构">Java中的程序运行结构</h2>
 <p>在Java中有三种运行结构</p>
 <p>顺序结构：程序从上到下依次执行。</p>
-<p>循环结构：在某个代码块中重复执行相同的操作。</p>
+<p>循环结构：重复执行相同操作的代码块。</p>
 <p>分支结构：在特定的条件下执行设置好的代码块。</p>
 <h6 id="循环结构">循环结构</h6>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">){</span>
@@ -275,20 +259,13 @@ sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><
 <p>volatile（不稳定的）</p>
 <p>常用关键字：</p>
 <p>break continue void extends implements interface</p>
-</div>
-  
-</article></main>
-<footer class="footer">
-  <span>&copy; 2020 <a href="http://example.org/">My New Hugo Site</a></span>
-  <span>&middot;</span>
-  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
-  <span>&middot;</span>
-  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
-</footer>
-<script src="http://example.org/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-</body>
-</html>
 
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
