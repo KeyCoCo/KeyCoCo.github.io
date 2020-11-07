@@ -1,60 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <title>Posts // My New Hugo Site</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Posts - My New Hugo Site</title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="http://example.org/an-old-hope.min.css" rel="stylesheet">
+    <link href="http://example.org/style.css" rel="stylesheet">
+    <link href="http://example.org/custom.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png">
+    <link rel="icon" href="http://example.org/favicon.ico">
     <meta name="generator" content="Hugo 0.71.1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="http://example.org/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
-
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+    <link rel="alternate" type="application/rss+xml" href="http://example.org/post/index.xml" title="My New Hugo Site" />
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
 
-    <meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/post/" />
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
 
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
 
+        function setBodyClass() {
+          if (now > sunrise && now < sunset) return;
+          document.body.classList.add('dark');
+        }
 
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
   </head>
-  <body>
-    <header class="app-header">
-      <a href="http://example.org/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <h1>My New Hugo Site</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-      <div class="app-header-social">
-        
-      </div>
+  <body class="list">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <p class="logo"><a href="http://example.org/">My New Hugo Site</a></p>
+      </nav>
     </header>
-    <main class="app-container">
-      
-  <article>
-    <h1>Posts</h1>
-    <ul class="posts-list">
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="http://example.org/post/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"></a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Jan 1, 0001
-          </span>
-        </li>
-      
-    </ul>
-    
+    <main class="main">
 
+<header class="page-header"><h1>Posts</h1></header>
 
-
-  </article>
-
-    </main>
-  </body>
+<article class="post-entry">
+  <header class="entry-header">
+    <h2></h2>
+  </header>
+  <section class="entry-content">
+   <p>mySql基础语法 连接数据库命令：mysql -uroot -padmin;
+查看已有数据库：show databases;
+创建一个库：create database 库名;
+选择一个库：use 库名;
+查看库内的数据表：show tables;
+在库内创建一个数据表：create table 表名(字段名 字段类型 ，字段名 字段类型 ，。。。。。)charset=utf8;
+create table MyTable(MyTable_Id int not null auto_increment,MyTable_Data varchar(20),rimmary key (MyTable_Id))charset=utf8;在表内插入数据：insert into 表名 (字段名)values(值);
+在表内删除数据：delete from 表名 where 筛选数据;
+在表内修改数据：update 表名 set 字段名 = 修改的值,字段名 = 修改的值where 筛选数据;
+查看表中所有数据：select * from 表名;
+在表内插入新的字段：alert table 表名 add 字段名 字段属性;
+在表内删除字段：alert table 表名 drop 字段名;...</p>
+  </section>
+  <footer class="entry-footer">
+    <time>January 1, 0001</time>
+  </footer>
+  <a class="entry-link" href="http://example.org/post/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"></a>
+</article></main>
+<footer class="footer">
+  <span>&copy; 2020 <a href="http://example.org/">My New Hugo Site</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="http://example.org/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>
+
